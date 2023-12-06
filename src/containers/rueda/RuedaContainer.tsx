@@ -182,14 +182,18 @@ const RuedaContainer = () => {
             {!loading ? (
               <Box paddingY={2} paddingX={3}>
                 {saldoEnRueda ? (
-                  <>
-                    <Typography variant="h6">Afecta saldo a partir de</Typography>
+                  <Box>
+                    <Typography textAlign={'end'} variant="h6">
+                      Saldo Base
+                    </Typography>
                     <Typography textAlign={'end'} variant="h5">
                       $ {saldoEnRueda}
                     </Typography>
-                  </>
+                  </Box>
                 ) : (
-                  <Typography variant="h6">No se posee saldo de alta.</Typography>
+                  <Typography textAlign={'end'} variant="h6">
+                    No se posee saldo de alta.
+                  </Typography>
                 )}
 
                 <Typography sx={{ fontStyle: 'italic' }} textAlign={'end'} variant="body1">
@@ -198,28 +202,21 @@ const RuedaContainer = () => {
                 <Divider />
                 <Box display={'flex'}>
                   {saldoEnRueda ? (
-                    <Box marginLeft={'auto'} gap={1} display={'flex'}>
+                    <Box marginLeft={'auto'} gap={1} display={'flex'} mt={2}>
                       <Button
                         variant="text"
                         size="small"
                         onClick={() => setOpenBaja(true)}
-                        color="error"
                         disabled={Boolean(request.saldo)}
                       >
                         <Typography variant="overline">desadherir</Typography>
                       </Button>
-                      <Button
-                        variant="text"
-                        size="small"
-                        onClick={handleOpen}
-                        color="success"
-                        disabled={Boolean(request.saldo)}
-                      >
+                      <Button variant="text" size="small" onClick={handleOpen} disabled={Boolean(request.saldo)}>
                         <Typography variant="overline">Modificar</Typography>
                       </Button>
                     </Box>
                   ) : (
-                    <Box marginLeft={'auto'} gap={1} display={'flex'}>
+                    <Box marginLeft={'auto'} gap={1} display={'flex'} mt={2}>
                       <Button variant="text" size="small" onClick={handleOpen} disabled={Boolean(request.saldo)}>
                         <Typography variant="overline">Adherir</Typography>
                       </Button>
@@ -240,7 +237,9 @@ const RuedaContainer = () => {
           <Box display={'flex'} alignItems={'flex-end'} flexDirection={'column'}>
             {!loading ? (
               <Box paddingY={2} paddingX={2}>
-                <Typography variant="h6">Saldo Cuenta en Pesos</Typography>
+                <Typography textAlign={'end'} variant="h6">
+                  Saldo Cuenta en Pesos
+                </Typography>
                 <Typography textAlign={'end'} variant="h5">
                   $ {moneyParse(saldoCuenta)}
                 </Typography>
@@ -251,7 +250,9 @@ const RuedaContainer = () => {
               </Box>
             ) : (
               <Box paddingY={2} paddingX={2}>
-                <Typography variant="h6">Saldo Cuenta en Pesos</Typography>
+                <Typography textAlign={'end'} variant="h6">
+                  Saldo Cuenta en Pesos
+                </Typography>
                 <Skeleton sx={{ marginLeft: 'auto' }} height={'50px'} width={'120px'} animation={'wave'} />
               </Box>
             )}
@@ -262,7 +263,9 @@ const RuedaContainer = () => {
           <Box display={'flex'} alignItems={'flex-end'} flexDirection={'column'}>
             {!loading ? (
               <Box paddingY={2} paddingX={2}>
-                <Typography variant="h6">Disponible para pases</Typography>
+                <Typography textAlign={'end'} variant="h6">
+                  Disponible para pases
+                </Typography>
                 <Typography variant="h5" textAlign={'end'}>
                   ${' '}
                   {saldoEnRueda
