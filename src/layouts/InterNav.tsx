@@ -56,7 +56,7 @@ const InternalNav = () => {
             borderBottom: location.pathname === '/log' ? ' 1px solid ' : ''
           }}
         >
-          AUDITORIA
+          AUDITORÍA
         </Typography>
       </NavLink>
     </Box>
