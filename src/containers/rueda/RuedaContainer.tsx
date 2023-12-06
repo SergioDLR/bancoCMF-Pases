@@ -226,7 +226,9 @@ const RuedaContainer = () => {
               </Box>
             ) : (
               <Box paddingY={2} paddingX={3}>
-                <Typography variant="h6">Afecta saldo a partir de</Typography>
+                <Typography textAlign={'end'} variant="h6">
+                  Saldo Base
+                </Typography>
                 <Skeleton sx={{ marginLeft: 'auto' }} height={'50px'} width={'120px'} animation={'wave'} />
               </Box>
             )}
