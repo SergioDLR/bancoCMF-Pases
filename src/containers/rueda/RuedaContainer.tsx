@@ -15,7 +15,9 @@ import {
   Table,
   TableBody,
   Skeleton,
-  Grid
+  Grid,
+  IconButton,
+  Divider
 } from '@mui/material'
 import ReplayIcon from '@mui/icons-material/Replay'
 import { useState, useEffect } from 'react'
@@ -32,7 +34,6 @@ const style = {
   transform: 'translate(-50%, -50%)',
   width: 400,
   bgcolor: 'background.paper',
-  borderRadius: '8px',
   boxShadow: 24,
   p: 4
 }
@@ -163,9 +164,21 @@ const RuedaContainer = () => {
   const [openBaja, setOpenBaja] = useState(false)
   return (
     <Box mt={3}>
-      <Box display={'flex'} gap={1}>
-        <Box width={'400px'}>
-          <Card variant="outlined" sx={{ height: '150px' }}>
+      <Card variant="outlined" sx={{ height: '75px', marginY: 2 }}>
+        <Box p={2} alignItems={'center'} display={'flex'}>
+          <Typography variant={'body1'} color={'secondary'}>
+            Ultima sincronización {dayjs().format('DD/MM/YYYY - HH:mm')}
+          </Typography>
+          <Box>
+            <IconButton onClick={refetchData}>
+              <ReplayIcon />
+            </IconButton>
+          </Box>
+        </Box>
+      </Card>
+      <Box display="flex" gap={2} flexDirection={{ xs: 'column', lg: 'row' }} minHeight={'210px'}>
+        <Card variant="outlined" sx={{ width: '100%' }}>
+          <Box>
             {!loading ? (
               <Box paddingY={2} paddingX={3}>
                 {saldoEnRueda ? (
@@ -182,6 +195,7 @@ const RuedaContainer = () => {
                 <Typography sx={{ fontStyle: 'italic' }} textAlign={'end'} variant="body1">
                   API Pases
                 </Typography>
+                <Divider />
                 <Box display={'flex'}>
                   {saldoEnRueda ? (
                     <Box marginLeft={'auto'} gap={1} display={'flex'}>
@@ -219,13 +233,13 @@ const RuedaContainer = () => {
                 <Skeleton sx={{ marginLeft: 'auto' }} height={'50px'} width={'120px'} animation={'wave'} />
               </Box>
             )}
-          </Card>
-        </Box>
+          </Box>
+        </Card>
 
-        <Box width={'400px'} marginLeft={'auto'}>
-          <Card variant="outlined" sx={{ height: '150px' }}>
+        <Card variant="outlined" sx={{ width: '100%' }}>
+          <Box display={'flex'} alignItems={'flex-end'} flexDirection={'column'}>
             {!loading ? (
-              <Box paddingY={2} paddingX={3}>
+              <Box paddingY={2} paddingX={2}>
                 <Typography variant="h6">Saldo Cuenta en Pesos</Typography>
                 <Typography textAlign={'end'} variant="h5">
                   $ {moneyParse(saldoCuenta)}
@@ -236,17 +250,18 @@ const RuedaContainer = () => {
                 </Typography>
               </Box>
             ) : (
-              <Box paddingY={2} paddingX={3}>
+              <Box paddingY={2} paddingX={2}>
                 <Typography variant="h6">Saldo Cuenta en Pesos</Typography>
                 <Skeleton sx={{ marginLeft: 'auto' }} height={'50px'} width={'120px'} animation={'wave'} />
               </Box>
             )}
-          </Card>
-        </Box>
-        <Box width={'400px'}>
-          <Card variant="outlined" sx={{ height: '150px' }}>
+          </Box>
+        </Card>
+
+        <Card variant="outlined" sx={{ width: '100%' }}>
+          <Box display={'flex'} alignItems={'flex-end'} flexDirection={'column'}>
             {!loading ? (
-              <Box paddingY={2} paddingX={3}>
+              <Box paddingY={2} paddingX={2}>
                 <Typography variant="h6">Disponible para pases</Typography>
                 <Typography variant="h5" textAlign={'end'}>
                   ${' '}
@@ -256,13 +271,13 @@ const RuedaContainer = () => {
                 </Typography>
               </Box>
             ) : (
-              <Box paddingY={2} paddingX={3}>
+              <Box paddingY={2} paddingX={2}>
                 <Typography variant="h6">Disponible para pases</Typography>
                 <Skeleton sx={{ marginLeft: 'auto' }} height={'50px'} width={'120px'} animation={'wave'} />
               </Box>
             )}
-          </Card>
-        </Box>
+          </Box>
+        </Card>
       </Box>
 
       <Grid container>
@@ -346,21 +361,6 @@ const RuedaContainer = () => {
         ) : (
           <Grid item xs={8} />
         )}
-        <Grid xs={4}>
-          <Box p={2} mt={6} ml={'auto'} alignItems={'center'} bgcolor={'#1976d2'} borderRadius={'6px'} width={'250px'}>
-            <Typography variant={'body1'} color={'secondary'}>
-              Ultima sincronización
-            </Typography>
-            <Typography variant={'body2'} color={'secondary'}>
-              {dayjs().format('DD/MM/YYYY - HH:mm')}
-            </Typography>
-            <Box display={'flex'} justifyContent={'flex-end'}>
-              <Button endIcon={<ReplayIcon />} variant={'outlined'} color={'secondary'} onClick={refetchData}>
-                Actualizar
-              </Button>
-            </Box>
-          </Box>
-        </Grid>
       </Grid>
 
       <Adhesion open={open} handleClose={handleClose} handleSubscrib={handleSubscrib} saldoCuenta={saldoCuenta} />
@@ -480,7 +480,7 @@ const RuedaContainer = () => {
         saldoCuenta={saldoCuenta}
       />
 
-      <Card variant={'outlined'} sx={{ marginTop: 2, width: 1000 }}>
+      <Card variant={'outlined'} sx={{ marginTop: 2 }}>
         <Box p={2}>
           <Typography>
             (*) Este sistema permite a las Entidades Financieras indicar el Saldo Base que se desee conservar en su

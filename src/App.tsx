@@ -7,37 +7,22 @@ import 'react-toastify/dist/ReactToastify.css'
 import { ToastContainer } from 'react-toastify'
 import { PasesConsulta } from './page/pasesConsulta'
 import TokenContainer from './containers/token/Token'
-import { ThemeProvider, createTheme } from '@mui/material/styles'
+import { ThemeProvider } from '@mui/material/styles'
 import LogAuditoriaContainer from './containers/logAuditoria/LogAuditoriaContainer'
-const theme = createTheme({
-  palette: {
-    secondary: {
-      main: '#FEFEFA' // Color secundario
-    }
-  },
-  typography: {
-    fontFamily: 'Roboto, Arial, sans-serif' // Fuente de texto predeterminada
-  },
-  spacing: 8 // Espaciado base (en píxeles)
-})
+import { theme } from './utils/theme'
 
 function App() {
   return (
-    <ThemeProvider theme={theme}>
+    <ThemeProvider theme={theme('light')}>
       <BrowserRouter basename="/">
         <NavBar />
         <Box m={2}>
-          <Card variant="outlined">
-            <Box p={4}>
-              {/* <InternalNav /> */}
-              <Routes>
-                <Route path="/" Component={RuedaContainer} />
-                <Route path="/consulta" Component={PasesConsulta} />
-                <Route path="/token" Component={TokenContainer} />
-                <Route path="/log" Component={LogAuditoriaContainer} />
-              </Routes>
-            </Box>
-          </Card>
+          <Routes>
+            <Route path="/" Component={RuedaContainer} />
+            <Route path="/consulta" Component={PasesConsulta} />
+            <Route path="/token" Component={TokenContainer} />
+            <Route path="/log" Component={LogAuditoriaContainer} />
+          </Routes>
         </Box>
         <ToastContainer />
         <Footer />

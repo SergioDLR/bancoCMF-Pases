@@ -18,7 +18,7 @@ const Adhesion = ({ open, handleClose, handleSubscrib, saldoCuenta }: IProps) =>
     transform: 'translate(-50%, -50%)',
     width: 400,
     bgcolor: 'background.paper',
-    borderRadius: '8px',
+
     boxShadow: 24,
     p: 4
   }

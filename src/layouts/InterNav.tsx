@@ -5,58 +5,58 @@ const InternalNav = () => {
   const location = useLocation()
 
   return (
-    <Box display={'flex'} gap={2}>
+    <Box display={'flex'} gap={2} marginLeft="auto">
       <NavLink style={{ color: 'inherit', textDecoration: 'inherit' }} to={'/'}>
-        <Typography   sx={{
-                  letterSpacing: '0.16px',
-                  lineHeight: '22px',
-                  fontSize: 'large',
-                  ml: 2,
-                  fontWeight: location.pathname === '/'  ?  600 : 400,
-                  borderRadius: '0px !important',
-                  color: location.pathname === '/'  ? '#303030' : '#6a6a6a',
-                }} >
-          Saldo Base
+        <Typography
+          sx={{
+            letterSpacing: '0.16px',
+            lineHeight: '22px',
+            ml: 2,
+            borderRadius: '0px !important',
+            borderBottom: location.pathname === '/' ? ' 1px solid ' : ''
+          }}
+        >
+          SALDO BASE
         </Typography>
       </NavLink>
       <NavLink style={{ color: 'inherit', textDecoration: 'inherit' }} to={'/consulta'}>
-        <Typography  sx={{
-                  letterSpacing: '0.16px',
-                  lineHeight: '22px',
-                  fontSize: 'large',
-                  ml: 2,
-                  fontWeight:location.pathname === '/consulta'  ?  600 : 400,
-                  borderRadius: '0px !important',
-                  color: location.pathname === '/consulta'  ? '#303030' : '#6a6a6a',
-                }}  >
-          Consulta de Pases
+        <Typography
+          sx={{
+            letterSpacing: '0.16px',
+            lineHeight: '22px',
+            ml: 2,
+            borderRadius: '0px !important',
+            borderBottom: location.pathname === '/consulta' ? ' 1px solid ' : ''
+          }}
+        >
+          CONSULTA
         </Typography>
       </NavLink>
 
       <NavLink style={{ color: 'inherit', textDecoration: 'inherit' }} to={'/token'}>
-        <Typography  sx={{
-                  letterSpacing: '0.16px',
-                  lineHeight: '22px',
-                  fontSize: 'large',
-                  ml: 2,
-                  fontWeight: location.pathname === '/token'  ?  600 : 400,
-                  borderRadius: '0px !important',
-                  color: location.pathname === '/token'  ? '#303030' : '#6a6a6a',
-                }} >
-          Token
+        <Typography
+          sx={{
+            letterSpacing: '0.16px',
+            lineHeight: '22px',
+            ml: 2,
+            borderRadius: '0px !important',
+            borderBottom: location.pathname === '/token' ? ' 1px solid ' : ''
+          }}
+        >
+          TOKEN
         </Typography>
       </NavLink>
       <NavLink style={{ color: 'inherit', textDecoration: 'inherit' }} to={'/log'}>
-        <Typography  sx={{
-                  letterSpacing: '0.16px',
-                  lineHeight: '22px',
-                  fontSize: 'large',
-                  ml: 2,
-                  fontWeight: location.pathname === '/log'  ?  600 : 400,
-                  borderRadius: '0px !important',
-                  color: location.pathname === '/log'  ? '#303030' : '#6a6a6a',
-                }} >
-          Log de auditoria
+        <Typography
+          sx={{
+            letterSpacing: '0.16px',
+            lineHeight: '22px',
+            ml: 2,
+            borderRadius: '0px !important',
+            borderBottom: location.pathname === '/log' ? ' 1px solid ' : ''
+          }}
+        >
+          AUDITORIA
         </Typography>
       </NavLink>
     </Box>

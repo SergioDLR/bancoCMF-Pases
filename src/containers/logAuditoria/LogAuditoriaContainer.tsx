@@ -39,7 +39,7 @@ const style = {
   transform: 'translate(-50%, -50%)',
   width: '80%',
   bgcolor: 'background.paper',
-  borderRadius: '8px',
+
   boxShadow: 24,
   p: 4
 }
@@ -264,8 +264,7 @@ const LogAuditoriaContainer = () => {
 
             <TableContainer
               sx={{
-                border: '2px solid black',
-                borderRadius: '8px'
+                border: '2px solid black'
               }}
             >
               <Table stickyHeader>
