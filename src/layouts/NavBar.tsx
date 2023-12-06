@@ -1,5 +1,5 @@
-import { Box, Avatar, Chip, AppBar, Toolbar, Container, Typography, Button } from '@mui/material'
-import logoCed from '../assets/images/cedst.png'
+import { Box, Avatar, AppBar, Toolbar, Container, Typography, Button } from '@mui/material'
+
 import bancoCmfLogo from '../assets/images/logo-cmf.png'
 import InternalNav from './InterNav'
 const NavBar = () => {
