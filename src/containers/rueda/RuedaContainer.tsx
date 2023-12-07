@@ -176,7 +176,7 @@ const RuedaContainer = () => {
           </Box>
         </Box>
       </Card>
-      <Box display="flex" gap={2} flexDirection={{ xs: 'column', lg: 'row' }} minHeight={'110px'}>
+      <Box display="flex" gap={2} flexDirection={{ xs: 'column', lg: 'row' }} minHeight={'180px'}>
         <Card variant="outlined" sx={{ width: '100%' }}>
           <Box>
             {!loading ? (
