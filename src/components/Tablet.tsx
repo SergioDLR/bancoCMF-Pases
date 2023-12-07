@@ -107,30 +107,24 @@ export const TabletMain = ({
           maxHeight: '350px',
           borderCollapse: 'initial',
           minWidth: !minWidth ? 650 : 500,
-          borderTopLeftRadius: '8px !important',
-          border: '2px solid black',
-          borderBottom: footer ? 'none' : '',
-          borderTopRightRadius: '8px',
-          borderBottomLeftRadius: footer ? '0px' : '8px',
-          borderBottomRightRadius: footer ? '0px' : '8px'
+
+          border: '1px solid black',
+          borderBottom: footer ? 'none' : ''
         }}
         component={Box}
       >
-        <Table stickyHeader aria-label="sticky table" size="small" sx={{}}>
+        <Table stickyHeader aria-label="sticky table">
           <TableHead>
-            <TableRow sx={{ pading: '5px', border: '2px solid #666 !important' }}>
+            <TableRow sx={{ pading: '5px', border: '1px solid #666 !important' }}>
               {columnas.length > 0 &&
                 columnas.map((item: any, index: number) =>
                   checked && index === 0 ? (
                     <TableCell
                       key={index}
                       sx={{
-                        borderBottom: '2px solid #666 !important',
-                        borderRight: index === 0 ? '2px solid #BEBEBE !important' : 'none',
-                        left: index === 0 ? 0 : '',
-                        top: index === 0 ? 0 : '',
-                        zIndex: index === 0 ? 15 : '',
-                        background: '#fff',
+                        borderBottom: '1px solid #666 !important',
+                        borderRight: index === 0 ? '1px solid #BEBEBE !important' : 'none',
+                        backgroundColor: '#e5ebf3',
                         cursor: 'pointer'
                       }}
                     >
@@ -138,12 +132,7 @@ export const TabletMain = ({
                         sx={{
                           display: 'flex',
                           m: 0,
-                          p: 0,
-                          fontSize: '12px',
-                          fontStyle: 'normal',
-                          fontWeight: 600,
-                          alignItems: 'center',
-                          justifyContent: 'flex-start'
+                          p: 0
                         }}
                       >
                         <Checkbox
@@ -161,9 +150,7 @@ export const TabletMain = ({
                             display: 'flex',
                             m: 0,
                             p: 0,
-                            fontSize: '12px',
-                            fontStyle: 'normal',
-                            fontWeight: 600,
+
                             alignItems: 'center'
                           }}
                         >
@@ -197,13 +184,8 @@ export const TabletMain = ({
                     <TableCell
                       key={index}
                       sx={{
-                        borderBottom: '2px solid #666 !important',
-                        borderRight: index === 0 ? '2px solid #BEBEBE !important' : 'none',
-
-                        left: index === 0 ? 0 : '',
-                        top: index === 0 ? 0 : '',
-                        zIndex: index === 0 ? 15 : '',
-                        background: '#fff',
+                        borderBottom: '1px solid #666 !important',
+                        backgroundColor: '#e5ebf3',
                         cursor: 'pointer'
                       }}
                       align="center"
@@ -214,9 +196,6 @@ export const TabletMain = ({
                           display: 'flex',
                           m: 0,
                           pl: 0,
-                          fontSize: '12px',
-                          fontStyle: 'normal',
-                          fontWeight: 600,
                           alignItems: 'center'
                         }}
                       >
@@ -243,7 +222,7 @@ export const TabletMain = ({
                             />
                           </svg>
                         )}
-                      </Typography>{' '}
+                      </Typography>
                     </TableCell>
                   )
                 )}
@@ -262,9 +241,7 @@ export const TabletMain = ({
       {footer && (
         <TableFooter
           sx={{
-            borderBottomLeftRadius: '8px',
-            borderBottomRightRadius: '8px',
-            border: '2px solid black',
+            border: '1px solid black',
             height: '60px',
             width: '100%',
             display: 'flex',
