@@ -163,7 +163,7 @@ const RuedaContainer = () => {
   }
   const [openBaja, setOpenBaja] = useState(false)
   return (
-    <Box mt={3}>
+    <Box mt={3} mb={6}>
       <Card variant="outlined" sx={{ height: '75px', marginY: 2 }}>
         <Box p={2} alignItems={'center'} display={'flex'}>
           <Typography variant={'body1'} color={'secondary'}>
@@ -176,7 +176,7 @@ const RuedaContainer = () => {
           </Box>
         </Box>
       </Card>
-      <Box display="flex" gap={2} flexDirection={{ xs: 'column', lg: 'row' }} minHeight={'210px'}>
+      <Box display="flex" gap={2} flexDirection={{ xs: 'column', lg: 'row' }} minHeight={'110px'}>
         <Card variant="outlined" sx={{ width: '100%' }}>
           <Box>
             {!loading ? (
