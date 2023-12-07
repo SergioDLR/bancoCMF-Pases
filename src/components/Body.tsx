@@ -5,7 +5,7 @@ export const Body = memo(({ filas, columnas }: any) => {
   const Row = ({ item }: any) => {
     return (
       <TableRow key={item?.id} sx={{ '&:last-child td, &:last-child th': { border: 0 } }}>
-        {columnas.map((column: any, index: number) => {
+        {columnas.map((column: any) => {
           const value = item[column.id]
 
           return (
